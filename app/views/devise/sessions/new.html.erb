@@ -1,0 +1,13 @@
+<div class="authform">
+	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), :html => { :role => 'form'}) do |f| %>
+		<h3>Log in</h3>
+		<%= f.input :email, :input_html => {:class => 'form-control', :autofocus => true } %>
+		<%= f.input :password, autocomplete: "off", :input_html => { :class => 'form-control'} %>
+		<% if devise_mapping.rememberable? -%>
+		    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+		<% end -%>
+		<br/>
+		<%= f.submit 'Log in', :class => 'button right' %>
+		<%= render "devise/shared/links" %>
+	<% end %>
+</div>

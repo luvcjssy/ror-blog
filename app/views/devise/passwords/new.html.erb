@@ -1,0 +1,11 @@
+<div class="authform"> 
+	<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: {:role => 'form', method: :post}) do |f| %>
+		<h3>Forgot your password?</h3>
+		<%= devise_error_messages! %>
+		<%= f.input :email, :input_html => { :class => 'form-control', :autofocus => true } %>
+		<br/>
+		<%= f.submit 'Send me reset password', :class => 'button right' %>
+		<%= render 'devise/shared/links' %>
+	<% end %>
+	
+</div>
